@@ -22,17 +22,18 @@ src/
 │   ├── layout.tsx          # Root Layout (Fonts, Header, Footer)
 │   ├── page.tsx            # Startseite
 │   ├── globals.css         # Design Tokens & Tailwind Config
-│   ├── ueber-uns/          # Über Uns
-│   ├── standorte/          # Standorte
-│   ├── karriere/           # Karriere
-│   ├── kontakt/            # Kontakt
+│   ├── ueber-uns/          # Über Uns (Geschichte, Team, Timeline)
+│   ├── produkte/           # Produkte (4 Kategorien)
+│   ├── standorte/          # Standorte (Karte + 14 Filialen)
+│   ├── karriere/           # Karriere (Benefits, Stellen)
+│   ├── kontakt/            # Kontakt (Formular)
 │   ├── impressum/          # Impressum
 │   └── datenschutz/        # Datenschutz
 ├── components/
 │   ├── layout/             # Header, Footer, MobileMenu, Container
-│   ├── home/               # Hero, Tradition, Values, Products, Locations, CTA
-│   └── ui/                 # Button, Badge, SectionHeading, ScrollReveal, CowSpotPattern
-├── data/                   # locations.ts, navigation.ts, jobs.ts
+│   ├── home/               # Hero, Tradition, Values, ProductShowcase, LocationsPreview, CTA
+│   └── ui/                 # Button, Badge, SectionHeading, ScrollReveal, PageHero, LocationMap
+├── data/                   # locations.ts, navigation.ts, jobs.ts, products.ts
 ├── lib/                    # utils.ts (cn()), constants.ts
 └── types/                  # TypeScript Interfaces
 ```
@@ -58,14 +59,15 @@ src/
 - `ScrollReveal` für Scroll-Animationen
 - `Container` für konsistente max-width
 - `SectionHeading` für einheitliche Sektions-Titel
-- `CowSpotPattern` als dekoratives SVG-Element (aus dem Bäckertüten-Design)
+- `PageHero` für konsistente Page-Header (variants: `image`, `gradient-warm`, `gradient-terracotta`)
 
 ## Wichtige Dateien
 
 - **`src/lib/constants.ts`** - Alle Firmendaten (Name, Adresse, Telefon, etc.)
-- **`src/data/locations.ts`** - 8 Filialstandorte mit Koordinaten und Öffnungszeiten
+- **`src/data/locations.ts`** - 14 Filialstandorte mit Koordinaten und Öffnungszeiten
 - **`src/data/jobs.ts`** - Stellenanzeigen
-- **`next.config.ts`** - Unsplash Remote-Images konfiguriert
+- **`src/data/products.ts`** - Produktkategorien und Einzelprodukte
+- **`next.config.ts`** - Unsplash Remote-Images, devIndicators deaktiviert
 
 ## Commands
 
@@ -78,9 +80,24 @@ npm run lint      # ESLint
 
 ## Bilder
 
-- Stock-Fotos von Unsplash (Remote-Images via next/image)
-- Logo: `public/images/logo.png` (PNG mit transparentem Hintergrund)
-- Tüten-Foto: `public/images/tueten.jpg`
+### Lokale Bilder (`public/images/`)
+- `Bock_Familie.jpg` - Familienfoto (Startseite Tradition, Über Uns Team-Sektion)
+- `Bock_Inhaber_1.png` - Inhaber mit Brot (Über Uns Story)
+- `logo.png` - Logo (Header, transparent)
+- `tueten.jpg` - Bäckertüte
+
+### Brand-Fotos (`public/images/brand/`)
+| Bild | Inhalt | Verwendung |
+|------|--------|------------|
+| `Bock_Brand_1.png` | Kundin vor Filiale mit Tüte | CTA-Section Startseite (Hintergrund) |
+| `Bock_Brand_2.png` | Mutter & Kind an Theke | Standorte PageHero |
+| `Bock_Brand_3.png` | Kunde mit Kaffee & Zeitung | Kontakt PageHero |
+| `Bock_Brand_4.png` | Filiale Außenansicht | Standorte Hauptfiliale-Karte |
+| `Bock_Brand_5.png` | Mitarbeiterin mit Gebäck | Karriere PageHero |
+
+### Stock-Fotos (Unsplash Remote)
+- Hero-Section: Bäckertheke (`photo-1517433670267`)
+- Produkt-Showcase: 4 Kategorie-Bilder (Brote, Kuchen, Snacks, Feingebäck)
 
 ## DSGVO
 
