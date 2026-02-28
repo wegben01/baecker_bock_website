@@ -1,0 +1,26 @@
+export const COMPANY = {
+  name: "Bäcker Bock",
+  fullName: "Bäcker Bock Backwaren GmbH",
+  slogan: "mit Liebe für dich gemacht",
+  founded: 1903,
+  generation: 5,
+  owner: "Monika Rauscher",
+  employees: 100,
+  branches: 14,
+  phone: "0911 50 22 27",
+  email: "bewerbung@baecker-bock.de",
+  website: "www.baecker-bock.de",
+  address: {
+    street: "Brandstraße 27",
+    zip: "90482",
+    city: "Nürnberg",
+  },
+  social: {
+    instagram: "https://instagram.com/baecker_bock",
+    facebook: "https://facebook.com/baeckerbock",
+    google: "https://g.page/baecker-bock-nuernberg",
+  },
+  registerId: "HRB 30065",
+  registerCourt: "Amtsgericht Nürnberg",
+  taxId: "DE292072949",
+} as const;
