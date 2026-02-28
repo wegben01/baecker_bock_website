@@ -28,7 +28,7 @@ function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string
 }
 
 function AnimatedDigits({ motionValue }: { motionValue: MotionValue<number> }) {
-  const display = useTransform(motionValue, (v) => Math.round(v).toLocaleString("de-DE"));
+  const display = useTransform(motionValue, (v) => Math.round(v).toString());
   return <motion.span>{display}</motion.span>;
 }
 
